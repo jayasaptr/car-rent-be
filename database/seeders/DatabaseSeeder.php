@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Booking;
+use App\Models\Car;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -15,9 +17,13 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // Seed 500 Users
+        User::factory(500)->create();
+
+        // Seed 1000 Cars
+        Car::factory(1000)->create();
+
+        // Seed 2000 Bookings
+        Booking::factory(2000)->create();
     }
 }
